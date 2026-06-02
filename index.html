@@ -89,26 +89,28 @@
 
   .carousel-slide.active {
     opacity: 1;
-    animation: panright 10s linear forwards;
+    animation: panright 12s linear infinite;
   }
 
   .carousel-slide:nth-child(even).active {
-    animation: panleft 10s linear forwards;
+    animation: panleft 12s linear infinite;
   }
 
   .carousel-slide.exit {
     opacity: 0;
-    transition: opacity 1.2s ease-in-out;
+    transition: opacity 1.4s ease-in-out;
   }
 
   @keyframes panright {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-2%); }
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(-2%); }
+    100% { transform: translateX(0); }
   }
 
   @keyframes panleft {
-    from { transform: translateX(-2%); }
-    to   { transform: translateX(0); }
+    0%   { transform: translateX(-2%); }
+    50%  { transform: translateX(0); }
+    100% { transform: translateX(-2%); }
   }
 
   .carousel-slide img {
@@ -163,35 +165,7 @@
     z-index: 2;
   }
 
-  .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: .4rem;
-    font-size: .7rem;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: rgba(245,197,24,0.08);
-    border: 1px solid rgba(245,197,24,0.2);
-    padding: .3rem .75rem;
-    border-radius: 2rem;
-    width: fit-content;
-    margin-bottom: 1.25rem;
-  }
 
-  .hero-tag::before {
-    content: '';
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%,100% { opacity:1; transform:scale(1); }
-    50%      { opacity:.5; transform:scale(.8); }
-  }
 
   h1 {
     font-family: 'Bebas Neue', sans-serif;
@@ -216,22 +190,26 @@
 
   /* FILTER BOX */
   .filter-box {
-    background: rgba(17,17,19,0.85);
-    backdrop-filter: blur(16px);
-    border: 1px solid var(--border);
+    background: rgba(10,10,11,0.88);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(245,197,24,0.25);
     border-radius: 16px;
-    padding: 1.25rem;
+    padding: 1.4rem 1.5rem;
     margin-bottom: 1.5rem;
-    max-width: 680px;
+    max-width: 700px;
+    box-shadow: 0 0 40px rgba(245,197,24,0.06);
   }
 
   .filter-label {
-    font-size: .7rem;
-    font-weight: 600;
-    letter-spacing: .1em;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--accent);
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
   }
 
   .filters {
@@ -242,42 +220,46 @@
 
   .filter-group label {
     display: block;
-    font-size: .7rem;
-    font-weight: 500;
-    color: var(--muted);
-    margin-bottom: .35rem;
-    letter-spacing: .06em;
+    font-size: .68rem;
+    font-weight: 600;
+    color: rgba(245,197,24,0.7);
+    margin-bottom: .4rem;
+    letter-spacing: .1em;
     text-transform: uppercase;
   }
 
   .filter-group select {
     width: 100%;
-    background: var(--bg3);
-    border: 1px solid var(--border);
+    background: rgba(26,26,29,0.95);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px;
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
-    font-size: .85rem;
-    padding: .6rem .75rem;
+    font-size: .9rem;
+    font-weight: 500;
+    padding: .7rem .85rem;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23f5c518' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right .75rem center;
+    background-position: right .85rem center;
     cursor: pointer;
-    transition: border-color .2s;
+    transition: border-color .2s, box-shadow .2s;
   }
 
   .filter-group select:focus {
     outline: none;
     border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(245,197,24,0.15);
   }
 
   .results-count {
     font-size: .8rem;
-    color: var(--muted);
-    margin-top: .75rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: .875rem;
+    padding-top: .875rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
   }
-  .results-count strong { color: var(--accent); }
+  .results-count strong { color: var(--accent); font-weight: 600; }
 
   /* METHODS */
   .section {
@@ -421,9 +403,8 @@
 
   <!-- CONTENT -->
   <div class="hero-content">
-    <div class="hero-tag">GTA 6 — Nov 19, 2026</div>
-    <h1>Make <em>More Money.</em> Play Smarter.</h1>
-    <p class="hero-sub">Filter every GTA 6 money method by your level, playstyle, budget and time. Find what works for you — instantly.</p>
+    <h1>The Fastest Way to<em>Get Rich in GTA 6.</em></h1>
+    <p class="hero-sub">Every money method in GTA 6 — ranked, filtered, and ready for you.<br>Pick your level, your time, your budget. Get your best method in seconds.</p>
 
     <div class="filter-box">
       <div class="filter-label">⚡ Find your best money method</div>
