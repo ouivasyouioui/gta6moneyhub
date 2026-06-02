@@ -70,6 +70,7 @@
     padding: 0 1.25rem 2.5rem;
     position: relative;
     overflow: hidden;
+    width: 100%;
   }
 
   /* CAROUSEL */
@@ -337,16 +338,38 @@
   /* DESKTOP */
   @media (min-width: 768px) {
     nav { padding: .875rem 2rem; }
-    .hero { padding: 0 2rem 3rem; }
+    .hero { padding: 0; }
+    .hero-content { padding: 0 2rem 3rem; }
     .filters { grid-template-columns: repeat(4,1fr); }
     .section { padding: 3rem 2rem 5rem; }
     .methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .875rem; }
   }
 
   @media (min-width: 1024px) {
-    .hero { padding: 0 4rem 3rem; max-width: 1200px; margin: 0 auto; width: 100%; }
+    .hero {
+      padding: 0;
+      max-width: 100%;
+      margin: 0;
+      width: 100%;
+    }
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 4rem 3.5rem;
+    }
     .section { max-width: 1200px; margin: 0 auto; padding: 3rem 4rem 5rem; }
     .methods-grid { grid-template-columns: repeat(3,1fr); }
+    h1 { font-size: clamp(3.5rem, 5vw, 5rem); }
+    .filter-box { max-width: 860px; }
+    .filters { grid-template-columns: repeat(4,1fr); gap: .75rem; }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-content {
+      max-width: 100%;
+      padding: 0 2rem 3rem;
+    }
   }
 </style>
 </head>
