@@ -625,12 +625,27 @@ let timer;
 
 
 function goTo(index) {
-  slides[current].classList.remove('active');
-  slides[current].classList.add('exit');
-  setTimeout(() => slides[current].classList.remove('exit'), 2000);
+  const leaving = slides[current];
+  leaving.classList.remove('active');
+  leaving.classList.add('exit');
+  setTimeout(() => leaving.classList.remove('exit'), 2000);
 
   current = index;
-  slides[current].classList.add('active');
+  const entering = slides[current];
+
+  const img = entering.querySelector('img');
+  const isEven = (current % 2 === 1);
+  img.style.transition = 'none';
+  img.style.transform = isEven ? 'translateX(0)' : 'translateX(-3%)';
+
+  entering.classList.add('active');
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      img.style.transition = 'transform 18s linear';
+      img.style.transform = isEven ? 'translateX(-3%)' : 'translateX(0)';
+    });
+  });
 }
 
 function next() {
