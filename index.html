@@ -63,7 +63,7 @@
 
   /* HERO */
   .hero {
-    min-height: 115svh;
+    min-height: 102svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,11 +91,11 @@
 
   .carousel-slide.active {
     opacity: 1;
-    animation: panright 14s ease-in-out infinite;
+    animation: panright 14s ease-in-out forwards;
   }
 
   .carousel-slide:nth-child(even).active {
-    animation: panleft 14s ease-in-out infinite;
+    animation: panleft 14s ease-in-out forwards;
   }
 
   .carousel-slide.exit {
@@ -104,15 +104,13 @@
   }
 
   @keyframes panright {
-    0%   { transform: translateX(0) scale(1.03); }
-    50%  { transform: translateX(-2%) scale(1.03); }
-    100% { transform: translateX(0) scale(1.03); }
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-2%); }
   }
 
   @keyframes panleft {
-    0%   { transform: translateX(-2%) scale(1.03); }
-    50%  { transform: translateX(0) scale(1.03); }
-    100% { transform: translateX(-2%) scale(1.03); }
+    0%   { transform: translateX(-2%); }
+    100% { transform: translateX(0); }
   }
 
   .carousel-slide img {
@@ -180,9 +178,12 @@
     color: #ffffff;
     text-align: center;
     margin-bottom: .875rem;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
     width: 100%;
     max-width: 660px;
+    background: rgba(8,8,9,0.55);
+    backdrop-filter: blur(8px);
+    padding: .5rem 1rem;
+    border-radius: 8px;
   }
 
   /* FILTER BOX */
@@ -250,7 +251,8 @@
 
   /* METHODS */
   .section {
-    padding: 0.75rem 1.25rem 4rem;
+    padding: 0 1.25rem 4rem;
+    margin-top: -2rem;
   }
 
   .section-title {
