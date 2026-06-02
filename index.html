@@ -91,27 +91,11 @@
 
   .carousel-slide.active {
     opacity: 1;
-    animation: panright 18s linear forwards;
-  }
-
-  .carousel-slide:nth-child(even).active {
-    animation: panleft 18s linear forwards;
   }
 
   .carousel-slide.exit {
     opacity: 0;
-    transition: opacity 1.6s ease-in-out;
-    animation: none;
-  }
-
-  @keyframes panright {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-3%); }
-  }
-
-  @keyframes panleft {
-    from { transform: translateX(-3%); }
-    to   { transform: translateX(0); }
+    transition: opacity 2s ease-in-out;
   }
 
   .carousel-slide img {
@@ -120,6 +104,20 @@
     object-fit: cover;
     object-position: center;
     display: block;
+    transform: translateX(0);
+    transition: transform 18s linear;
+  }
+
+  .carousel-slide.active img {
+    transform: translateX(-3%);
+  }
+
+  .carousel-slide:nth-child(even) img {
+    transform: translateX(-3%);
+  }
+
+  .carousel-slide:nth-child(even).active img {
+    transform: translateX(0);
   }
 
   /* Gradient — lighter to show images better */
