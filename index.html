@@ -105,7 +105,7 @@
     object-position: center;
     display: block;
     transform: translateX(0);
-    transition: transform 18s linear;
+    transition: transform 12s linear;
   }
 
   .carousel-slide.active img {
@@ -642,7 +642,7 @@ function goTo(index) {
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      img.style.transition = 'transform 18s linear';
+      img.style.transition = 'transform 12s linear';
       img.style.transform = isEven ? 'translateX(-3%)' : 'translateX(0)';
     });
   });
