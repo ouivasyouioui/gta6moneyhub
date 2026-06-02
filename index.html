@@ -85,32 +85,33 @@
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 1.6s ease-in-out;
+    transition: opacity 2s ease-in-out;
     will-change: opacity, transform;
   }
 
   .carousel-slide.active {
     opacity: 1;
-    animation: panright 14s ease-in-out forwards;
+    animation: panright 18s linear forwards;
   }
 
   .carousel-slide:nth-child(even).active {
-    animation: panleft 14s ease-in-out forwards;
+    animation: panleft 18s linear forwards;
   }
 
   .carousel-slide.exit {
     opacity: 0;
     transition: opacity 1.6s ease-in-out;
+    animation: none;
   }
 
   @keyframes panright {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-2%); }
+    from { transform: translateX(0); }
+    to   { transform: translateX(-3%); }
   }
 
   @keyframes panleft {
-    0%   { transform: translateX(-2%); }
-    100% { transform: translateX(0); }
+    from { transform: translateX(-3%); }
+    to   { transform: translateX(0); }
   }
 
   .carousel-slide img {
@@ -630,7 +631,7 @@ let timer;
 function goTo(index) {
   slides[current].classList.remove('active');
   slides[current].classList.add('exit');
-  setTimeout(() => slides[current].classList.remove('exit'), 1200);
+  setTimeout(() => slides[current].classList.remove('exit'), 2000);
 
   current = index;
   slides[current].classList.add('active');
@@ -641,7 +642,7 @@ function next() {
 }
 
 function startTimer() {
-  timer = setInterval(next, 5000);
+  timer = setInterval(next, 7000);
 }
 
 function stopTimer() {
