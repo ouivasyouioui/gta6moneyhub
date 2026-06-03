@@ -449,6 +449,77 @@
     line-height: 1.5;
   }
 
+  /* COOKIE BANNER */
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(15,15,17,0.97);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-banner p {
+    font-size: .8rem;
+    color: rgba(242,242,242,0.7);
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .cookie-banner p a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .cookie-banner-btns {
+    display: flex;
+    gap: .5rem;
+    flex-shrink: 0;
+  }
+
+  .cookie-accept {
+    background: var(--accent);
+    color: #080809;
+    border: none;
+    border-radius: 7px;
+    padding: .5rem 1.25rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+
+  .cookie-accept:hover { opacity: .85; }
+
+  .cookie-decline {
+    background: transparent;
+    color: rgba(242,242,242,0.5);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: .5rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+
+  .cookie-decline:hover { opacity: .7; }
+
+  @media (min-width: 768px) {
+    .cookie-banner { padding: 1rem 2rem; }
+  }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 2rem 1.25rem;
@@ -840,5 +911,41 @@ function filterMethods() {
 </script>
 
 <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+
+<div class="cookie-banner" id="cookie-banner">
+  <p>This site uses cookies to improve your experience. By continuing, you agree to our use of cookies. <a href="#">Learn more</a></p>
+  <div class="cookie-banner-btns">
+    <button class="cookie-decline" onclick="dismissCookies()">Decline</button>
+    <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
+
+<script>
+// Cookie banner
+if (localStorage.getItem('cookies-accepted')) {
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
+function acceptCookies() {
+  localStorage.setItem('cookies-accepted', 'true');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
+function dismissCookies() {
+  localStorage.setItem('cookies-accepted', 'declined');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
+// Fix iframe title for accessibility
+setTimeout(() => {
+  const iframes = document.querySelectorAll('iframe');
+  iframes.forEach(iframe => {
+    if (!iframe.getAttribute('title')) {
+      iframe.setAttribute('title', 'Email subscription form');
+    }
+  });
+}, 2000);
+</script>
+
 </body>
 </html>
