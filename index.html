@@ -365,6 +365,55 @@
 
   .no-results { display: none; text-align: center; padding: 2rem; color: var(--muted); font-size: .9rem; }
 
+  /* EMAIL SECTION */
+  .email-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 1.25rem;
+  }
+
+  .email-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .email-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: .04em;
+    color: var(--text);
+    margin-bottom: .4rem;
+    text-transform: uppercase;
+  }
+
+  .email-sub {
+    font-size: .95rem;
+    color: rgba(242,242,242,0.65);
+    line-height: 1.55;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .email-form {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .email-form iframe,
+  .email-form > div {
+    width: 100% !important;
+  }
+
+  @media (min-width: 768px) {
+    .email-section { padding: 4rem 2rem; }
+  }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 2rem 1.25rem;
@@ -520,6 +569,18 @@
     </div>
   </div>
 
+</section>
+
+<section class="email-section">
+  <div class="email-inner">
+    <div class="email-text">
+      <h2 class="email-title">Get the guide first.</h2>
+      <p class="email-sub">Be the first to access all GTA 6 money methods when the game drops.</p>
+    </div>
+    <div class="email-form">
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="f60e3199-3d43-4999-989b-5dd2746fd14c"></script>
+    </div>
+  </div>
 </section>
 
 <section class="section">
@@ -749,5 +810,6 @@ function filterMethods() {
 }
 </script>
 
+<script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
 </html>
