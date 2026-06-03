@@ -168,10 +168,10 @@
   }
 
   h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial Black', sans-serif;
-    font-size: clamp(2rem, 7.5vw, 4rem);
-    line-height: .95;
-    letter-spacing: .03em;
+    font-family: 'Arial Black', 'Arial Bold', sans-serif;
+    font-size: clamp(1.6rem, 5.5vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: .02em;
     margin-bottom: .875rem;
     max-width: 700px;
     text-shadow: 0 1px 12px rgba(0,0,0,0.5);
@@ -183,11 +183,13 @@
   h1 em {
     font-style: normal;
     color: var(--accent);
-    display: block;
+    display: inline;
   }
 
-  .h1-line1 {
-    display: block;
+  @media (min-width: 480px) {
+    h1 em {
+      display: block;
+    }
   }
 
 
@@ -477,7 +479,7 @@
 
   <!-- CONTENT -->
   <div class="hero-content">
-    <h1><span class="h1-line1">The Fastest Way to</span><em>Get Rich in GTA 6.</em></h1>
+    <h1>The Fastest Way to <em>Get Rich in GTA 6.</em></h1>
 
     <h2 class="filter-title">FILTER AND GET YOUR MONEY METHODS INSTANTLY</h2>
     <div class="filter-box">
