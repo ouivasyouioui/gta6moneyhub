@@ -259,7 +259,7 @@
 
   .results-count {
     font-size: .78rem;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.6);
     margin-top: .875rem;
     padding-top: .875rem;
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -336,7 +336,7 @@
     color: var(--green);
     line-height: 1;
   }
-  .earn-label { font-size: .6rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+  .earn-label { font-size: .6rem; color: #9a9a9a; letter-spacing: .06em; text-transform: uppercase; }
 
   .card-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .625rem; }
 
@@ -360,7 +360,7 @@
 
   .stat { background: var(--bg3); border-radius: 6px; padding: .4rem .5rem; text-align: center; border: 1px solid var(--border); }
   .stat-val { font-size: .78rem; font-weight: 600; display: block; color: var(--text); }
-  .stat-key { font-size: .58rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: .1rem; display: block; }
+  .stat-key { font-size: .58rem; color: #9a9a9a; text-transform: uppercase; letter-spacing: .06em; margin-top: .1rem; display: block; }
 
   .no-results { display: none; text-align: center; padding: 2rem; color: var(--muted); font-size: .9rem; }
 
@@ -481,7 +481,7 @@
       <div class="filters">
         <div class="filter-group">
           <label>Your level</label>
-          <select id="f-level" onchange="filterMethods()">
+          <select id="f-level" onchange="filterMethods()" aria-label="Your level">
             <option value="all">All levels</option>
             <option value="beginner">Beginner</option>
             <option value="intermediate">Intermediate</option>
@@ -490,7 +490,7 @@
         </div>
         <div class="filter-group">
           <label>Solo or group</label>
-          <select id="f-solo" onchange="filterMethods()">
+          <select id="f-solo" onchange="filterMethods()" aria-label="Solo or group">
             <option value="all">Doesn't matter</option>
             <option value="solo">Solo only</option>
             <option value="group">Group</option>
@@ -498,7 +498,7 @@
         </div>
         <div class="filter-group">
           <label>Starting budget</label>
-          <select id="f-budget" onchange="filterMethods()">
+          <select id="f-budget" onchange="filterMethods()" aria-label="Starting budget">
             <option value="all">Any budget</option>
             <option value="broke">Broke ($0)</option>
             <option value="some">Some cash</option>
@@ -507,7 +507,7 @@
         </div>
         <div class="filter-group">
           <label>Time available</label>
-          <select id="f-time" onchange="filterMethods()">
+          <select id="f-time" onchange="filterMethods()" aria-label="Time available">
             <option value="all">Any duration</option>
             <option value="quick">Quick (&lt; 30 min)</option>
             <option value="medium">Medium (30m–2h)</option>
