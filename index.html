@@ -443,39 +443,28 @@
   .email-hero {
     width: 100%;
     max-width: 660px;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     text-align: center;
-  }
-
-  .email-box {
-    background: rgba(15,15,17,0.75);
-    border: 1px solid rgba(77,216,224,0.2);
-    border-radius: 14px;
-    padding: 1.1rem 1rem;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
   }
 
   .email-perks {
     display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    margin-top: 1rem;
-    text-align: left;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem 1.25rem;
+    margin-top: .875rem;
   }
 
   .email-perk {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    font-size: .8rem;
-    color: rgba(242,242,242,0.6);
+    font-size: .78rem;
+    color: rgba(242,242,242,0.55);
     line-height: 1.4;
   }
 
-  .perk-icon {
-    font-size: .95rem;
-    flex-shrink: 0;
+  .perk-check {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: .2rem;
   }
 
   .email-hero .email-sub {
@@ -603,13 +592,14 @@
   }
 
   .email-hero-sub {
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    letter-spacing: .04em;
+    text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 1rem;
     text-shadow: 0 2px 20px rgba(0,0,0,0.95);
-    line-height: 1.5;
-    letter-spacing: .01em;
+    line-height: 1.1;
   }
 
   /* COOKIE BANNER */
@@ -840,29 +830,18 @@
     </div>
 
     <div class="email-hero">
-      <div class="email-box">
-        <p class="email-hero-sub">Get the <span style="color:var(--accent);font-weight:800">GTA 6 Money Machine</span> guide before everyone else.</p>
-        <div class="custom-email-form" id="email-form-wrap">
-          <div class="custom-email-row">
-            <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
-            <button onclick="submitEmail()" class="email-btn" id="email-btn">I WANT IT</button>
-          </div>
-          <div class="email-feedback" id="email-feedback"></div>
+      <p class="email-hero-sub">Get the <span style="color:var(--accent);font-weight:800">GTA 6 Money Machine</span> guide before everyone else.</p>
+      <div class="custom-email-form" id="email-form-wrap">
+        <div class="custom-email-row">
+          <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
+          <button onclick="submitEmail()" class="email-btn" id="email-btn">I WANT IT</button>
         </div>
-        <div class="email-perks">
-          <div class="email-perk">
-            <span class="perk-icon">⚡</span>
-            <span>Every money method ranked from day one</span>
-          </div>
-          <div class="email-perk">
-            <span class="perk-icon">🔄</span>
-            <span>Updated within hours of every Rockstar patch</span>
-          </div>
-          <div class="email-perk">
-            <span class="perk-icon">🔒</span>
-            <span>100% free.</span>
-          </div>
-        </div>
+        <div class="email-feedback" id="email-feedback"></div>
+      </div>
+      <div class="email-perks">
+        <div class="email-perk"><span class="perk-check">✓</span> Every method ranked from day one</div>
+        <div class="email-perk"><span class="perk-check">✓</span> Updated after every Rockstar patch</div>
+        <div class="email-perk"><span class="perk-check">✓</span> 100% free</div>
       </div>
     </div>
 
