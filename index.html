@@ -598,12 +598,13 @@
     width: 100%;
     max-width: 660px;
     margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
     text-align: center;
   }
 
   .email-hero-sub {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-size: clamp(1.4rem, 4.2vw, 2rem);
     letter-spacing: .04em;
     text-transform: uppercase;
     color: #ffffff;
@@ -683,7 +684,103 @@
     .cookie-banner { padding: 1rem 2rem; }
   }
 
-  footer {
+  /* ABOUT SECTION */
+  .about-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4rem 1.25rem 5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .about-label {
+    display: inline-block;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(77,216,224,0.08);
+    border: 1px solid rgba(77,216,224,0.2);
+    padding: .3rem .75rem;
+    border-radius: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1.05;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: border-color .2s;
+  }
+
+  .about-card:hover {
+    border-color: rgba(77,216,224,0.25);
+  }
+
+  .about-icon {
+    font-size: 1.5rem;
+    margin-bottom: .75rem;
+  }
+
+  .about-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: .5rem;
+  }
+
+  .about-card-text {
+    font-size: .85rem;
+    color: rgba(242,242,242,0.6);
+    line-height: 1.7;
+  }
+
+  .about-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .about-link {
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: .04em;
+    transition: opacity .2s;
+  }
+
+  .about-link:hover { opacity: .7; }
+
+  @media (min-width: 768px) {
+    .about-grid { grid-template-columns: repeat(3, 1fr); }
+    .about-section { padding: 5rem 2rem 6rem; }
+  }
+
+  /* footer */
     border-top: 1px solid var(--border);
     padding: 2rem 1.25rem;
     text-align: center;
@@ -732,9 +829,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "GTA6 Money Hub",
+  "name": "GTA6MoneyHub",
   "url": "https://gta6moneyhub.com",
-  "description": "Every GTA 6 money method, ranked and filtered for your playstyle. Find what works for you in seconds.",
+  "description": "How to make money in GTA 6 Online — every money method ranked and filtered by level, budget and playstyle. The ultimate GTA 6 money guide, updated at launch.",
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://gta6moneyhub.com/?q={search_term_string}",
@@ -750,7 +847,7 @@
   "applicationCategory": "GameApplication",
   "operatingSystem": "Web",
   "url": "https://gta6moneyhub.com",
-  "description": "Interactive tool to find the best money-making methods in GTA 6 Online. Filter by level, playstyle, budget and time available.",
+  "description": "Interactive tool to find the best ways to make money in GTA 6 Online. Filter GTA 6 money methods by level, playstyle, budget and time available.",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -761,6 +858,46 @@
     "name": "Grand Theft Auto VI",
     "gamePlatform": ["PlayStation 5", "Xbox Series X"]
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you make money fast in GTA 6 Online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The fastest ways to make money in GTA 6 Online combine active methods like heists with passive income from businesses. Use the filter tool on GTA6MoneyHub to find the best method for your level and budget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best money method in GTA 6 Online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best GTA 6 money method depends on your level, budget and playstyle. Heists offer the highest single payouts, while passive businesses generate income in the background. GTA6MoneyHub ranks and filters every method to find the right one for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does GTA 6 Online launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GTA 6 launches on November 19, 2026 for PlayStation 5 and Xbox Series X. GTA 6 Online is expected to be available from day one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is GTA6MoneyHub free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, GTA6MoneyHub is 100% free. No subscription, no paywall, no credit card required. Every GTA 6 money guide and method on this site is completely free."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -796,6 +933,23 @@
   <!-- CONTENT -->
   <div class="hero-content">
     <h1>Make Money in GTA 6 Online. <em>Day One.</em></h1>
+
+    <div class="email-hero">
+      <p class="email-hero-sub">Your <span style="color:var(--accent)">Free GTA 6 Money Machine</span> guide on <span style="color:var(--accent)">launch day.</span> Before everyone else.</p>
+      <p class="email-social-proof">Join <span style="color:var(--accent)">247 players</span> already signed up</p>
+      <div class="custom-email-form" id="email-form-wrap">
+        <div class="custom-email-row">
+          <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
+          <button onclick="submitEmail()" class="email-btn" id="email-btn">SEND ME THE GUIDE</button>
+        </div>
+        <div class="email-feedback" id="email-feedback"></div>
+      </div>
+      <div class="email-perks">
+        <div class="email-perk"><span class="perk-check">✓</span> Every method ranked from day one</div>
+        <div class="email-perk"><span class="perk-check">✓</span> Updated after every Rockstar patch</div>
+        <div class="email-perk"><span class="perk-check">✓</span> 100% free. No payment or credit card needed.</div>
+      </div>
+    </div>
 
     <div class="filter-box">
       <h2 class="filter-title">Find your best GTA 6 money method instantly</h2>
@@ -837,23 +991,6 @@
         </div>
       </div>
       <div class="results-count">Showing <strong id="count">8</strong> methods</div>
-    </div>
-
-    <div class="email-hero">
-      <p class="email-hero-sub">Get the <span style="color:var(--accent)">GTA 6 Money Machine</span> guide before everyone else.</p>
-      <p class="email-social-proof">Join <span style="color:var(--accent)">247 players</span> already signed up</p>
-      <div class="custom-email-form" id="email-form-wrap">
-        <div class="custom-email-row">
-          <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
-          <button onclick="submitEmail()" class="email-btn" id="email-btn">SEND ME THE GUIDE</button>
-        </div>
-        <div class="email-feedback" id="email-feedback"></div>
-      </div>
-      <div class="email-perks">
-        <div class="email-perk"><span class="perk-check">✓</span> Every method ranked from day one</div>
-        <div class="email-perk"><span class="perk-check">✓</span> Updated after every Rockstar patch</div>
-        <div class="email-perk"><span class="perk-check">✓</span> 100% free. No payment or credit card needed.</div>
-      </div>
     </div>
 
   </div>
@@ -1007,14 +1144,31 @@
   </div>
 </section>
 
-<section style="max-width:760px;margin:0 auto;padding:3rem 1.25rem 4rem;border-top:1px solid rgba(255,255,255,0.06);">
-  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em;text-transform:uppercase;color:#f2f2f2;margin-bottom:1rem;">How to Make Money in GTA 6 Online</h2>
-  <p style="font-size:.9rem;color:rgba(242,242,242,0.65);line-height:1.8;margin-bottom:1rem;">GTA 6 Online launches November 19, 2026. From day one, knowing the best GTA 6 money methods will separate players who stack millions in the first week from those who grind contact missions for months. GTA6MoneyHub tracks every confirmed and expected money-making method in GTA 6 Online — ranked by payout, filtered by your level, budget and playstyle.</p>
-  <p style="font-size:.9rem;color:rgba(242,242,242,0.65);line-height:1.8;margin-bottom:1rem;">Based on GTA Online's history and confirmed GTA 6 leaks, the most efficient ways to make money in GTA 6 will include heists, passive businesses, VIP-style work, and an all-new economy system set in Vice City. The players who understand the difference between active and passive income — and invest in the right businesses first — will dominate the GTA 6 economy from the start.</p>
-  <p style="font-size:.9rem;color:rgba(242,242,242,0.65);line-height:1.8;">Use the filter tool above to find the best GTA 6 money method for your situation. Subscribe to get the complete GTA 6 Money Machine guide on launch day — before the meta is even established.</p>
+<section class="about-section">
+  <h2 class="about-title">Why Trust GTA6MoneyHub for GTA 6 Money Guides?</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-icon">🔒</div>
+      <div class="about-card-title">Free GTA 6 Money Guides. No Strings.</div>
+      <p class="about-card-text">No subscription, no paywall, no credit card. Every GTA 6 money method, every guide, every update on this site is completely free. We make money guides, not money from you.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">🔄</div>
+      <div class="about-card-title">The GTA 6 Meta Changes. We Keep Up.</div>
+      <p class="about-card-text">The GTA 6 Online economy changes with every Rockstar weekly update. Payouts get nerfed, new methods drop, bonuses rotate. GTA6MoneyHub tracks every change so you always know which GTA 6 money method is worth your time right now.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">🎯</div>
+      <div class="about-card-title">Your GTA 6 Money Method. In Seconds.</div>
+      <p class="about-card-text">Solo or group, broke or funded, 15 minutes or a full session — filter every GTA 6 Online money method by your level, budget and time. No more guessing which method to run. Just results.</p>
+    </div>
+  </div>
+  <div class="about-links">
+    <a href="/blog/gta-6-online-economy" class="about-link">GTA 6 Online Economy Guide →</a>
+    <a href="/faq" class="about-link">GTA 6 Money FAQ →</a>
+    <a href="/blog" class="about-link">All GTA 6 Guides →</a>
+  </div>
 </section>
-
-<footer>
   <p>GTA6MoneyHub is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.<br>
   GTA 6 releases November 19, 2026. Data will be updated at launch.<br>
   <a href="/privacy" style="color:#4DD8E0;text-decoration:none;">Privacy Policy</a></p>
