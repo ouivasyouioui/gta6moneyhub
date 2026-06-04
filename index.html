@@ -107,7 +107,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 1.25rem 1.5rem;
+    padding: 5rem 1.25rem 1.5rem;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -447,24 +447,34 @@
     text-align: center;
   }
 
+  .email-social-proof {
+    font-size: .78rem;
+    color: rgba(242,242,242,0.45);
+    margin-bottom: .875rem;
+    margin-top: -.5rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+  }
+
   .email-perks {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .5rem 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    gap: .35rem;
     margin-top: .875rem;
   }
 
   .email-perk {
     font-size: .78rem;
-    color: rgba(242,242,242,0.55);
+    color: rgba(242,242,242,0.5);
     line-height: 1.4;
   }
 
   .perk-check {
     color: var(--accent);
     font-weight: 700;
-    margin-right: .2rem;
+    margin-right: .25rem;
   }
 
   .email-hero .email-sub {
@@ -830,11 +840,12 @@
     </div>
 
     <div class="email-hero">
-      <p class="email-hero-sub">Get the <span style="color:var(--accent);font-weight:800">GTA 6 Money Machine</span> guide before everyone else.</p>
+      <p class="email-hero-sub">Get the <span style="color:var(--accent)">GTA 6 Money Machine</span> guide before everyone else.</p>
+      <p class="email-social-proof">Join <span style="color:var(--accent)">247 players</span> already signed up</p>
       <div class="custom-email-form" id="email-form-wrap">
         <div class="custom-email-row">
           <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
-          <button onclick="submitEmail()" class="email-btn" id="email-btn">I WANT IT</button>
+          <button onclick="submitEmail()" class="email-btn" id="email-btn">SEND ME THE GUIDE</button>
         </div>
         <div class="email-feedback" id="email-feedback"></div>
       </div>
