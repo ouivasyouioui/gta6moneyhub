@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="GTA 6 Money Hub — Find the best money-making methods in GTA 6 Online. Filter by level, playstyle, budget and time. The ultimate GTA 6 economy tool.">
-<title>GTA 6 Money Hub — Best Money Methods & Guides</title>
+<meta name="description" content="How to make money in GTA 6 Online — every money method ranked and filtered by level, budget and playstyle. The ultimate GTA 6 money guide, updated at launch.">
+<title>How to Make Money in GTA 6 Online — Best Methods & Guides | GTA6MoneyHub</title>
 
 <link rel="canonical" href="https://gta6moneyhub.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gta6moneyhub.com/">
-<meta property="og:title" content="GTA 6 Money Hub — The Fastest Way to Get Rich in GTA 6">
-<meta property="og:description" content="Every GTA 6 money method, ranked and filtered for your playstyle. Find what works for you in seconds.">
+<meta property="og:title" content="How to Make Money in GTA 6 Online — Best Money Methods & Guides">
+<meta property="og:description" content="Every GTA 6 money method ranked and filtered for your playstyle. Find the fastest way to make money in GTA 6 Online from day one.">
 <meta property="og:image" content="https://gta6moneyhub.com/img3.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="670">
@@ -20,8 +20,8 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://gta6moneyhub.com/">
-<meta name="twitter:title" content="GTA 6 Money Hub — The Fastest Way to Get Rich in GTA 6">
-<meta name="twitter:description" content="Every GTA 6 money method, ranked and filtered for your playstyle. Find what works for you in seconds.">
+<meta name="twitter:title" content="How to Make Money in GTA 6 Online — Best Money Methods & Guides">
+<meta name="twitter:description" content="Every GTA 6 money method ranked and filtered for your playstyle. Find the fastest way to make money in GTA 6 Online from day one.">
 <meta name="twitter:image" content="https://gta6moneyhub.com/img3.webp">
 
 <meta name="robots" content="index, follow">
@@ -190,7 +190,7 @@
 
   h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.8rem, 11vw, 5.5rem);
+    font-size: clamp(2.2rem, 8.5vw, 5.5rem);
     line-height: .93;
     letter-spacing: .02em;
     margin-bottom: .875rem;
@@ -204,7 +204,6 @@
   h1 em {
     font-style: normal;
     color: var(--accent);
-    display: block;
   }
 
 
@@ -446,6 +445,37 @@
     max-width: 660px;
     margin-top: 1rem;
     text-align: center;
+  }
+
+  .email-box {
+    background: rgba(15,15,17,0.75);
+    border: 1px solid rgba(77,216,224,0.2);
+    border-radius: 14px;
+    padding: 1.1rem 1rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .email-perks {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  .email-perk {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .8rem;
+    color: rgba(242,242,242,0.6);
+    line-height: 1.4;
+  }
+
+  .perk-icon {
+    font-size: .95rem;
+    flex-shrink: 0;
   }
 
   .email-hero .email-sub {
@@ -765,10 +795,10 @@
 
   <!-- CONTENT -->
   <div class="hero-content">
-    <h1>Get Rich in GTA 6.<em>Faster.</em></h1>
+    <h1>Make Money in GTA 6 Online. <em>Day One.</em></h1>
 
     <div class="filter-box">
-      <h2 class="filter-title">Filter and get your money methods instantly</h2>
+      <h2 class="filter-title">Find your best GTA 6 money method instantly</h2>
       <div class="filters">
         <div class="filter-group">
           <label>Your level</label>
@@ -810,13 +840,29 @@
     </div>
 
     <div class="email-hero">
-      <p class="email-hero-sub">Get the GTA 6 <span style="color:var(--accent);font-weight:800">Money Machine</span> guide. <span style="color:var(--accent);font-weight:800">Day one.</span> Before everyone else.</p>
-      <div class="custom-email-form" id="email-form-wrap">
-        <div class="custom-email-row">
-          <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
-          <button onclick="submitEmail()" class="email-btn" id="email-btn">I WANT IT</button>
+      <div class="email-box">
+        <p class="email-hero-sub">Get the <span style="color:var(--accent);font-weight:800">GTA 6 Money Machine</span> guide before everyone else.</p>
+        <div class="custom-email-form" id="email-form-wrap">
+          <div class="custom-email-row">
+            <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
+            <button onclick="submitEmail()" class="email-btn" id="email-btn">I WANT IT</button>
+          </div>
+          <div class="email-feedback" id="email-feedback"></div>
         </div>
-        <div class="email-feedback" id="email-feedback"></div>
+        <div class="email-perks">
+          <div class="email-perk">
+            <span class="perk-icon">⚡</span>
+            <span>Every money method ranked from day one</span>
+          </div>
+          <div class="email-perk">
+            <span class="perk-icon">🔄</span>
+            <span>Updated within hours of every Rockstar patch</span>
+          </div>
+          <div class="email-perk">
+            <span class="perk-icon">🔒</span>
+            <span>100% free.</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -969,6 +1015,13 @@
     <div style="font-size:2rem;margin-bottom:.5rem">🎮</div>
     <p>No methods match your filters.<br>Try adjusting your criteria.</p>
   </div>
+</section>
+
+<section style="max-width:760px;margin:0 auto;padding:3rem 1.25rem 4rem;border-top:1px solid rgba(255,255,255,0.06);">
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em;text-transform:uppercase;color:#f2f2f2;margin-bottom:1rem;">How to Make Money in GTA 6 Online</h2>
+  <p style="font-size:.9rem;color:rgba(242,242,242,0.65);line-height:1.8;margin-bottom:1rem;">GTA 6 Online launches November 19, 2026. From day one, knowing the best GTA 6 money methods will separate players who stack millions in the first week from those who grind contact missions for months. GTA6MoneyHub tracks every confirmed and expected money-making method in GTA 6 Online — ranked by payout, filtered by your level, budget and playstyle.</p>
+  <p style="font-size:.9rem;color:rgba(242,242,242,0.65);line-height:1.8;margin-bottom:1rem;">Based on GTA Online's history and confirmed GTA 6 leaks, the most efficient ways to make money in GTA 6 will include heists, passive businesses, VIP-style work, and an all-new economy system set in Vice City. The players who understand the difference between active and passive income — and invest in the right businesses first — will dominate the GTA 6 economy from the start.</p>
+  <p style="font-size:.9rem;color:rgba(242,242,242,0.65);line-height:1.8;">Use the filter tool above to find the best GTA 6 money method for your situation. Subscribe to get the complete GTA 6 Money Machine guide on launch day — before the meta is even established.</p>
 </section>
 
 <footer>
