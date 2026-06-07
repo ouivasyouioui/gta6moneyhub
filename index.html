@@ -145,21 +145,31 @@
     object-fit: cover;
     object-position: center;
     display: block;
-    transform: translateX(0);
+    transform: translateX(-3%);
     transition: transform 12s linear;
     will-change: transform;
   }
 
   .carousel-slide.active img {
-    transform: translateX(-3%);
+    transform: translateX(0);
   }
 
   .carousel-slide:nth-child(even) img {
-    transform: translateX(-3%);
+    transform: translateX(0);
   }
 
   .carousel-slide:nth-child(even).active img {
-    transform: translateX(0);
+    transform: translateX(-3%);
+  }
+
+  .carousel-slide.pan-forward img {
+    transform: translateX(-3%) !important;
+    transition: none !important;
+  }
+
+  .carousel-slide.pan-backward img {
+    transform: translateX(0) !important;
+    transition: none !important;
   }
 
   /* Gradient — lighter to show images better */
@@ -1193,18 +1203,15 @@ function goTo(index) {
 
   current = index;
   const entering = slides[current];
-
-  const img = entering.querySelector('img');
   const isEven = (current % 2 === 1);
-  img.style.transition = 'none';
-  img.style.transform = isEven ? 'translateX(0)' : 'translateX(-3%)';
 
-  entering.classList.add('active');
+  entering.classList.remove('pan-forward', 'pan-backward');
+  entering.classList.add(isEven ? 'pan-backward' : 'pan-forward');
 
   requestAnimationFrame(() => {
+    entering.classList.add('active');
     requestAnimationFrame(() => {
-      img.style.transition = 'transform 12s linear';
-      img.style.transform = isEven ? 'translateX(-3%)' : 'translateX(0)';
+      entering.classList.remove('pan-forward', 'pan-backward');
     });
   });
 }
