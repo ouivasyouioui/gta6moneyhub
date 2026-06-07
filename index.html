@@ -29,6 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/img3.webp" fetchpriority="high">
 
 <style>
   :root {
@@ -146,6 +147,7 @@
     display: block;
     transform: translateX(0);
     transition: transform 12s linear;
+    will-change: transform;
   }
 
   .carousel-slide.active img {
@@ -186,6 +188,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    contain: layout style;
   }
 
   h1 {
@@ -914,19 +917,19 @@
   <!-- CAROUSEL -->
   <div class="carousel" id="carousel">
     <div class="carousel-slide active">
-      <img src="img3.webp" alt="GTA 6 money guide - aerial view of Vice City from helicopter" loading="eager" fetchpriority="high">
+      <img src="img3.webp" alt="GTA 6 money guide - aerial view of Vice City from helicopter" loading="eager" fetchpriority="high" width="1920" height="1080">
     </div>
     <div class="carousel-slide">
-      <img src="img2.webp" alt="GTA 6 online money methods - Vice City Ocean Drive boulevard" loading="lazy">
+      <img src="img2.webp" alt="GTA 6 online money methods - Vice City Ocean Drive boulevard" loading="lazy" width="1920" height="1080">
     </div>
     <div class="carousel-slide">
-      <img src="img5.webp" alt="GTA 6 best money methods - Vice City luxury marina" loading="lazy">
+      <img src="img5.webp" alt="GTA 6 best money methods - Vice City luxury marina" loading="lazy" width="1920" height="1080">
     </div>
     <div class="carousel-slide">
-      <img src="img4.webp" alt="GTA 6 make money fast - luxury mansion Vice City" loading="lazy">
+      <img src="img4.webp" alt="GTA 6 make money fast - luxury mansion Vice City" loading="lazy" width="1920" height="1080">
     </div>
     <div class="carousel-slide">
-      <img src="img1.webp" alt="GTA 6 money farming guide - luxury penthouse Vice City" loading="lazy">
+      <img src="img1.webp" alt="GTA 6 money farming guide - luxury penthouse Vice City" loading="lazy" width="1920" height="1080">
     </div>
   </div>
 
