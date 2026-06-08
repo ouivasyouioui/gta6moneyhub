@@ -67,7 +67,10 @@
   "@type": "Article",
   "headline": "GTA 6 Money Leaks — What's Confirmed, What's Rumored, What's BS",
   "description": "Every GTA 6 leak about money methods fact-checked. What's confirmed by official sources, what's credible rumor, and what's pure disinformation.",
-  "image": "https://gta6moneyhub.com/img-leaks-card.webp",
+  "image": [
+    "https://gta6moneyhub.com/img-leaks-card.webp",
+    "https://gta6moneyhub.com/img-leaks-spot.webp"
+  ],
   "datePublished": "2026-06-08T10:00:00+02:00",
   "dateModified": "2026-06-08T10:00:00+02:00",
   "author": {
@@ -539,6 +542,37 @@
     margin: 0;
   }
 
+  .article-figure {
+    margin: 2rem -0.5rem;
+    position: relative;
+  }
+
+  .article-figure img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+    max-height: 360px;
+  }
+
+  .article-figure::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgba(8,8,9,0.5) 0%, transparent 15%, transparent 85%, rgba(8,8,9,0.5) 100%);
+    pointer-events: none;
+  }
+
+  .article-figure figcaption {
+    font-size: .75rem;
+    color: rgba(242,242,242,0.6);
+    margin-top: .5rem;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
   .legend {
     display: flex;
     gap: 1rem;
@@ -657,28 +691,28 @@
         <span class="verdict-badge verdict-confirmed">Confirmed</span>
         <div class="verdict-content">
           <h3>Heists are in GTA 6</h3>
-          <p>Trailer 2 explicitly showed heist-style gameplay — armored truck robberies, bank jobs, crew coordination. Heists are confirmed. Payout amounts are not.</p>
+          <p>Trailer 2 explicitly showed heist-style gameplay — armored truck robberies, bank jobs, crew coordination. Heists are confirmed. Payout amounts are not. <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">[Source: Rockstar Games]</a></p>
         </div>
       </div>
       <div class="verdict-item">
         <span class="verdict-badge verdict-confirmed">Confirmed</span>
         <div class="verdict-content">
           <h3>Dual protagonists Jason and Lucia</h3>
-          <p>Both playable characters are confirmed. Their presence likely means different starting positions and early access to different money methods, similar to how GTA 5's three protagonists had different specialties.</p>
+          <p>Both playable characters are confirmed via official trailers. Their presence likely means different starting positions and early access to different money methods, similar to how GTA 5's three protagonists had different specialties. <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">[Source: Rockstar Games]</a></p>
         </div>
       </div>
       <div class="verdict-item">
         <span class="verdict-badge verdict-confirmed">Confirmed</span>
         <div class="verdict-content">
           <h3>Six-star Wanted level returns</h3>
-          <p>Visible in Trailer 2. Directly relevant to money methods — harder wanted level escapes mean higher risk for certain high-reward activities.</p>
+          <p>Visible in Trailer 2. Directly relevant to money methods — harder wanted level escapes mean higher risk for certain high-reward activities. <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">[Source: Rockstar Games]</a></p>
         </div>
       </div>
       <div class="verdict-item">
         <span class="verdict-badge verdict-confirmed">Confirmed</span>
         <div class="verdict-content">
           <h3>32-player online lobbies</h3>
-          <p>An April 2026 trademark court filing from Rockstar accidentally confirmed 32-player lobbies for GTA 6 Online, up from GTA 5's 30-player cap. More players means more dynamic heist and mission opportunities.</p>
+          <p>Revealed via court documents from Rockstar's employment tribunal with fired UK developers. Journalist Chris Bratt (People Make Games) accessed the documents in Glasgow and found Discord messages referencing a 32-player QA session for an "unannounced online service." Rockstar's own legal team called the figure "highly confidential and commercially sensitive" — effectively confirming it. <a href="https://insider-gaming.com/gta-6-online-could-feature-32-player-lobbies-court-documents-suggest/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">[Source: Insider Gaming]</a></p>
         </div>
       </div>
     </div>
@@ -765,6 +799,11 @@
     </div>
 
     <h2>How to Spot a Fake GTA 6 Leak</h2>
+
+    <figure class="article-figure">
+      <img src="/img-leaks-spot.webp" alt="GTA 6 leaks investigation — detective office with evidence board in Vice City" loading="lazy" width="800" height="447">
+      <figcaption>Separating real GTA 6 leaks from fabricated content requires the same skepticism you'd bring to any investigation.</figcaption>
+    </figure>
 
     <p>With the game launching November 19, fake leaks will intensify. Five checks before believing anything:</p>
 
