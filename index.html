@@ -150,6 +150,7 @@
     width: 100%; max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.25rem 3rem;
+    padding-top: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,6 +168,7 @@
     opacity: 0;
     animation: fadeUp .6s .4s ease forwards;
     max-width: 800px;
+    text-shadow: 0 1px 20px rgba(0,0,0,0.6);
   }
 
   h1 em { font-style: normal; color: var(--accent); display: inline; }
@@ -221,25 +223,19 @@
   }
 
   .hero-card-countdown {
-    background: rgba(8,8,9,0.12);
-    border: 1px solid rgba(77,216,224,0.12);
-    border-radius: 12px;
-    padding: .7rem 1rem;
-    backdrop-filter: blur(6px);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: .75rem;
-    flex-wrap: wrap;
+    gap: .5rem;
+    padding: .5rem 0 .75rem;
   }
 
   .hcd-label {
-    font-size: .6rem; font-weight: 700; letter-spacing: .12em;
-    text-transform: uppercase; color: var(--accent); opacity: .7;
-    white-space: nowrap;
+    font-size: .72rem; font-weight: 700; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--accent); opacity: .8;
   }
 
-  .hcd-units { display: flex; align-items: center; gap: .5rem; flex: 1; justify-content: center; }
+  .hcd-units { display: flex; align-items: center; gap: .5rem; justify-content: center; }
 
   .hcd-unit { display: flex; flex-direction: column; align-items: center; gap: .1rem; min-width: 40px; }
 
