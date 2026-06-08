@@ -284,6 +284,11 @@
   .article-figure::after { content: ''; position: absolute; inset: 0; border-radius: 10px; background: linear-gradient(to right, rgba(8,8,9,0.5) 0%, transparent 15%, transparent 85%, rgba(8,8,9,0.5) 100%); pointer-events: none; }
   .article-figure figcaption { font-size: .75rem; color: rgba(242,242,242,0.6); margin-top: .5rem; text-align: center; font-style: italic; line-height: 1.5; }
 
+  .article-figure { margin: 2rem -0.5rem; position: relative; }
+  .article-figure img { width: 100%; border-radius: 10px; display: block; object-fit: cover; max-height: 360px; }
+  .article-figure::after { content: ''; position: absolute; inset: 0; border-radius: 10px; background: linear-gradient(to right, rgba(8,8,9,0.5) 0%, transparent 15%, transparent 85%, rgba(8,8,9,0.5) 100%); pointer-events: none; }
+  .article-figure figcaption { font-size: .75rem; color: rgba(242,242,242,0.6); margin-top: .5rem; text-align: center; font-style: italic; line-height: 1.5; }
+
   .article-cta { background: var(--bg2); border: 1px solid rgba(77,216,224,0.25); border-radius: 14px; padding: 1.5rem; text-align: center; margin: 2.5rem 0; }
   .article-cta h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .5rem; color: var(--text) !important; }
   .article-cta p { font-size: .85rem; color: rgba(242,242,242,0.6); margin-bottom: 1rem; }
@@ -322,7 +327,7 @@
 
 <main>
 <div class="article-hero-wrap">
-  <img src="/img-gta5-vs-gta6.webp" alt="GTA 5 Online vs GTA 6 Online — Los Santos versus Vice City comparison" class="article-hero" loading="eager" fetchpriority="high" width="800" height="447">
+  <img src="/img-economy-hero.webp" alt="GTA 6 Online — Vice City skyline at night" class="article-hero" loading="eager" fetchpriority="high" width="1200" height="675">
 </div>
 
 <div class="article-wrap">
@@ -352,6 +357,11 @@
   </div>
 
   <p class="article-intro">Most GTA Online veterans will arrive in GTA 6 with 13 years of muscle memory. Some of it will serve them well. Some of it will cost them millions. Here's every confirmed and credible difference between GTA 5 Online and GTA 6 Online that directly affects how you make money — so you know exactly what to carry over, what to update, and what to unlearn entirely.</p>
+
+  <figure class="article-figure">
+    <img src="/img-gta5-vs-gta6.webp" alt="GTA 5 Online Los Santos versus GTA 6 Online Vice City — city comparison showing the shift from dark rainy LA to warm Miami waterfront" loading="eager" width="800" height="447">
+    <figcaption>Los Santos (GTA 5) vs Vice City (GTA 6) — same criminal empire, completely different environment and economy.</figcaption>
+  </figure>
 
   <div class="article-body">
 
