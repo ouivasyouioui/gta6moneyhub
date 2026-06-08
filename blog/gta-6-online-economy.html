@@ -61,7 +61,11 @@
   "@type": "Article",
   "headline": "GTA 6 Online Economy — Everything We Know So Far",
   "description": "Everything we know about GTA 6 Online economy — confirmed businesses, money methods, passive income and what changes from GTA 5. The complete guide.",
-  "image": "https://gta6moneyhub.com/img-economy-hero.webp",
+  "image": [
+    "https://gta6moneyhub.com/img-economy-hero.webp",
+    "https://gta6moneyhub.com/img-vicecity-map.webp",
+    "https://gta6moneyhub.com/img-active-passive.webp"
+  ],
   "datePublished": "2026-06-03T10:00:00+02:00",
   "dateModified": "2026-06-08T10:00:00+02:00",
   "author": {
@@ -72,12 +76,45 @@
   "publisher": {
     "@type": "Organization",
     "name": "GTA6MoneyHub",
-    "url": "https://gta6moneyhub.com"
+    "url": "https://gta6moneyhub.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gta6moneyhub.com/favicon.ico"
+    }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://gta6moneyhub.com/blog/gta-6-online-economy"
-  }
+  },
+  "keywords": "GTA 6 online economy, GTA 6 money methods, how to make money GTA 6, GTA 6 passive income, GTA 6 heists, Vice City economy",
+  "articleSection": "Economy",
+  "wordCount": "1200"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://gta6moneyhub.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://gta6moneyhub.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GTA 6 Online Economy — Everything We Know So Far",
+      "item": "https://gta6moneyhub.com/blog/gta-6-online-economy"
+    }
+  ]
 }
 </script>
 
@@ -374,6 +411,46 @@
     letter-spacing: .06em;
   }
 
+  .breadcrumb {
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb li {
+    font-size: .75rem;
+    color: rgba(242,242,242,0.4);
+  }
+
+  .breadcrumb li::after {
+    content: '›';
+    margin-left: .5rem;
+  }
+
+  .breadcrumb li:last-child::after {
+    display: none;
+  }
+
+  .breadcrumb a {
+    color: rgba(242,242,242,0.4);
+    text-decoration: none;
+    transition: color .2s;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--accent);
+  }
+
+  .breadcrumb li[aria-current="page"] {
+    color: rgba(242,242,242,0.6);
+  }
+
   .article-author {
     display: flex;
     align-items: center;
@@ -484,6 +561,14 @@
 </div>
 
 <div class="article-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li aria-current="page">GTA 6 Online Economy</li>
+    </ol>
+  </nav>
 
   <div class="article-meta">
     <span class="article-tag">Economy</span>
