@@ -159,7 +159,7 @@
   /* H1 */
   h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.6rem, 7vw, 4.5rem);
+    font-size: clamp(3rem, 8vw, 5rem);
     line-height: .95;
     letter-spacing: .03em;
     text-transform: uppercase;
@@ -185,6 +185,7 @@
     opacity: 0;
     animation: fadeUp .6s .7s ease forwards;
     overflow: hidden;
+    margin-top: 2.5rem;
   }
 
   .filter-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .875rem; flex-wrap: wrap; gap: .5rem; }
@@ -218,11 +219,11 @@
   }
 
   .hero-card-countdown {
-    background: rgba(8,8,9,0.42);
-    border: 1px solid rgba(77,216,224,0.18);
+    background: rgba(8,8,9,0.22);
+    border: 1px solid rgba(77,216,224,0.15);
     border-radius: 12px;
     padding: .7rem 1rem;
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -266,19 +267,19 @@
 
   .hero-card {
     background: rgba(8,8,9,0.42);
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 12px;
-    padding: .75rem .875rem;
+    padding: 1rem 1.1rem;
     text-decoration: none;
     backdrop-filter: blur(12px);
-    transition: border-color .2s, background .2s;
-    display: flex; flex-direction: column; gap: .3rem;
+    transition: border-color .2s, background .2s, transform .15s;
+    display: flex; flex-direction: column; gap: .4rem;
   }
 
-  .hero-card:hover { border-color: rgba(77,216,224,0.25); background: rgba(77,216,224,0.04); }
+  .hero-card:hover { border-color: rgba(77,216,224,0.3); background: rgba(77,216,224,0.05); transform: translateY(-1px); }
 
-  .hero-card-label { font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
-  .hero-card-desc { font-size: .65rem; color: rgba(242,242,242,0.45); line-height: 1.4; }
+  .hero-card-label { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .hero-card-desc { font-size: .7rem; color: rgba(242,242,242,0.55); line-height: 1.5; }
 
   /* LATEST ARTICLE CARD */
   .hero-card-article {
@@ -525,7 +526,7 @@
     <div class="hero-cards">
 
       <div class="hero-card-countdown">
-        <div class="hcd-label">GTA 6 Online launches in</div>
+        <div class="hcd-label" style="font-size:.75rem;letter-spacing:.1em;">GTA 6 DROPS IN</div>
         <div class="hcd-units">
           <div class="hcd-unit"><span class="hcd-num" id="hcd-days">—</span><span class="hcd-key">Days</span></div>
           <span class="hcd-sep">:</span>
@@ -535,7 +536,6 @@
           <span class="hcd-sep">:</span>
           <div class="hcd-unit"><span class="hcd-num" id="hcd-secs">—</span><span class="hcd-key">Sec</span></div>
         </div>
-        <div class="hcd-date">November 19, 2026</div>
       </div>
 
       <div class="hero-cards-row">
@@ -547,7 +547,7 @@
 
         <a href="/blog" class="hero-card">
           <span class="hero-card-label">📖 Guides</span>
-          <span class="hero-card-desc">In-depth GTA 6 money strategy.</span>
+          <span class="hero-card-desc">Economy breakdowns, leak analysis, GTA 5 vs GTA 6 comparisons.</span>
         </a>
 
         <a href="/blog/gta-5-vs-gta-6-online" class="hero-card hero-card-article">
