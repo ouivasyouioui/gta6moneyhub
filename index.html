@@ -1052,8 +1052,6 @@ function updateCountdown() {
   document.getElementById('hcd-hours').textContent = pad(h);
   document.getElementById('hcd-mins').textContent = pad(m);
   document.getElementById('hcd-secs').textContent = pad(s);
-  document.getElementById('nav-days').textContent = d;
-  document.getElementById('nav-hrs').textContent = pad(h);
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
