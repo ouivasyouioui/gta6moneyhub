@@ -307,82 +307,156 @@
 
   .hcd-date { font-size: .6rem; color: rgba(242,242,242,0.28); letter-spacing: .06em; white-space: nowrap; }
 
+  /* CARDS ROW — boutons + widget */
   .hero-cards-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1.8fr;
     gap: .5rem;
+    align-items: stretch;
   }
 
-  .hero-card {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
+  /* BOUTONS LEAKS + GUIDES */
+  .hero-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .75rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(77,216,224,0.2);
     border-radius: 12px;
+    background: rgba(77,216,224,0.04);
     text-decoration: none;
-    transition: border-color .25s, transform .15s;
+    transition: border-color .2s, background .2s, transform .15s;
     min-height: 100px;
   }
 
-  .hero-card:hover { border-color: rgba(77,216,224,0.35); transform: translateY(-2px); }
+  .hero-btn:hover {
+    border-color: rgba(77,216,224,0.5);
+    background: rgba(77,216,224,0.08);
+    transform: translateY(-2px);
+  }
 
-  .hero-card-bg {
+  .hero-btn-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero-btn-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .hero-btn-arrow {
+    font-size: .8rem;
+    color: var(--accent);
+    opacity: .5;
+    transition: opacity .2s, transform .2s;
+  }
+
+  .hero-btn:hover .hero-btn-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+
+  .hero-btn-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .hero-btn-desc {
+    font-size: .65rem;
+    color: rgba(242,242,242,0.45);
+    line-height: 1.4;
+  }
+
+  /* WIDGET LATEST ARTICLE */
+  .hero-widget {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(77,216,224,0.2);
+    border-radius: 12px;
+    text-decoration: none;
+    min-height: 100px;
+    transition: border-color .25s, transform .15s;
+  }
+
+  .hero-widget:hover {
+    border-color: rgba(77,216,224,0.5);
+    transform: translateY(-2px);
+  }
+
+  .hero-widget-bg {
     position: absolute; inset: 0;
     object-fit: cover; width: 100%; height: 100%;
-    opacity: .4; transition: opacity .3s;
+    opacity: .45;
+    transition: opacity .35s;
   }
 
-  .hero-card:hover .hero-card-bg { opacity: .6; }
+  .hero-widget:hover .hero-widget-bg { opacity: .6; }
 
-  .hero-card::after {
+  .hero-widget::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(8,8,9,0.95) 0%, rgba(8,8,9,0.45) 60%, rgba(8,8,9,0.1) 100%);
+    background:
+      linear-gradient(to top, rgba(8,8,9,1) 0%, rgba(8,8,9,0.8) 40%, rgba(8,8,9,0.25) 100%),
+      linear-gradient(to right, rgba(8,8,9,0.4) 0%, transparent 60%);
   }
 
-  .hero-card-inner {
+  .hero-widget-content {
     position: relative; z-index: 1;
-    padding: .875rem 1rem;
-    display: flex; flex-direction: column; gap: .3rem;
-    height: 100%; min-height: 100px; justify-content: flex-end;
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 100px;
   }
 
-  .hero-card-label { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
-  .hero-card-desc { font-size: .68rem; color: rgba(242,242,242,0.6); line-height: 1.4; }
-
-  /* LATEST ARTICLE CARD */
-  .hero-card-article {
-    position: relative; overflow: hidden;
-    border-color: rgba(77,216,224,0.15);
+  .hero-widget-badge {
+    font-size: .55rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--bg); background: var(--accent);
+    padding: .18rem .55rem; border-radius: 3px;
+    width: fit-content;
   }
 
-  .hero-card-article-bg {
-    position: absolute; inset: 0;
-    object-fit: cover; width: 100%; height: 100%;
-    opacity: .5; transition: opacity .3s;
+  .hero-widget-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
   }
 
-  .hero-card-article:hover .hero-card-article-bg { opacity: .68; }
-
-  .hero-card-article::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(8,8,9,0.95) 0%, rgba(8,8,9,0.5) 50%, rgba(8,8,9,0.15) 100%);
+  .hero-widget-label {
+    font-size: .58rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: rgba(242,242,242,0.45);
   }
 
-  .hero-card-article-content {
-    position: relative; z-index: 1;
-    padding: .875rem 1rem;
-    display: flex; flex-direction: column; gap: .3rem;
-    min-height: 100px; justify-content: flex-end;
+  .hero-widget-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(.95rem, 1.8vw, 1.2rem);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1.15;
   }
 
-  .hero-card-article-tag {
-    font-size: .56rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--accent); background: rgba(77,216,224,0.15);
-    border: 1px solid rgba(77,216,224,0.25);
-    padding: .1rem .4rem; border-radius: 3px; width: fit-content;
+  .hero-widget-cta {
+    font-size: .63rem; font-weight: 700;
+    color: var(--accent);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: .3rem;
   }
 
-  .hero-card-article-title { font-size: .68rem; font-weight: 700; color: var(--text); line-height: 1.3; }
-  .hero-card-article-cta { font-size: .6rem; font-weight: 600; color: var(--accent); letter-spacing: .04em; }
+  .hero-widget-cta::after {
+    content: '→';
+    transition: transform .2s;
+  }
+
+  .hero-widget:hover .hero-widget-cta::after { transform: translateX(3px); }
 
   .email-input {
     background: var(--bg3); border: 1px solid var(--border);
@@ -537,6 +611,15 @@
   .cookie-decline { background: transparent; color: rgba(242,242,242,0.7); border: 1px solid rgba(255,255,255,0.15); border-radius: 7px; padding: .5rem 1.25rem; font-family: 'DM Sans', sans-serif; font-size: .8rem; cursor: pointer; }
 
   /* RESPONSIVE */
+  @media (max-width: 639px) {
+    .hero-cards-row {
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-widget {
+      grid-column: 1 / -1;
+    }
+  }
+
   @media (min-width: 640px) {
     .hero-email-row { flex-direction: row; }
     .methods-grid { grid-template-columns: repeat(2, 1fr); }
@@ -578,7 +661,6 @@
   <a href="/blog" class="nav-link">Blog</a>
   <a href="/about" class="nav-link">About</a>
   <div class="nav-spacer"></div>
-  <div class="nav-cd">Launch in <strong id="nav-days">—</strong>d <strong id="nav-hrs">—</strong>h</div>
 </nav>
 
 <section class="hero">
@@ -593,7 +675,7 @@
     <div class="hero-cards">
 
       <div class="hero-card-countdown">
-        <div class="hcd-label" style="font-size:1rem;letter-spacing:.14em;">GTA 6 DROPS IN</div>
+        <div class="hcd-label" style="font-size:1rem;letter-spacing:.14em;color:#f2f2f2;opacity:1;">GTA 6 DROPS IN</div>
         <div class="hcd-units">
           <div class="hcd-unit"><span class="hcd-num" id="hcd-days">—</span><span class="hcd-key">Days</span></div>
           <span class="hcd-sep">:</span>
@@ -607,28 +689,37 @@
 
       <div class="hero-cards-row">
 
-        <a href="/leaks" class="hero-card">
-          <img src="/img-leaks-card.webp" alt="GTA 6 leak tracker" class="hero-card-bg" loading="lazy" width="800" height="447">
-          <div class="hero-card-inner">
-            <span class="hero-card-label">🔍 Leak Tracker</span>
-            <span class="hero-card-desc">Every leak verified. Confirmed vs Rumored.</span>
+        <a href="/leaks" class="hero-btn" aria-label="GTA 6 Leak Tracker">
+          <div class="hero-btn-top">
+            <span class="hero-btn-icon">🔍</span>
+            <span class="hero-btn-arrow">→</span>
+          </div>
+          <div>
+            <div class="hero-btn-label">Leaks</div>
+            <div class="hero-btn-desc">Confirmed vs rumored — every claim verified.</div>
           </div>
         </a>
 
-        <a href="/blog" class="hero-card">
-          <img src="/img-economy-hero.webp" alt="GTA 6 guides" class="hero-card-bg" loading="lazy" width="1200" height="675">
-          <div class="hero-card-inner">
-            <span class="hero-card-label">📖 Guides</span>
-            <span class="hero-card-desc">Economy breakdowns, leak analysis, and more.</span>
+        <a href="/blog" class="hero-btn" aria-label="GTA 6 Guides">
+          <div class="hero-btn-top">
+            <span class="hero-btn-icon">📖</span>
+            <span class="hero-btn-arrow">→</span>
+          </div>
+          <div>
+            <div class="hero-btn-label">Guides</div>
+            <div class="hero-btn-desc">Economy breakdowns and money strategies.</div>
           </div>
         </a>
 
-        <a href="/blog/gta-5-vs-gta-6-online" class="hero-card hero-card-article">
-          <img src="/img-gta5-vs-gta6.webp" alt="GTA 5 vs GTA 6 Online" class="hero-card-article-bg" loading="lazy" width="800" height="447">
-          <div class="hero-card-article-content">
-            <span class="hero-card-article-tag">Latest</span>
-            <span class="hero-card-article-title">GTA 5 vs GTA 6 Online — What Actually Changes</span>
-            <span class="hero-card-article-cta">Read now →</span>
+        <a href="/blog/gta-5-vs-gta-6-online" class="hero-widget" aria-label="GTA 5 vs GTA 6 Online — What Actually Changes">
+          <img src="/img-gta5-vs-gta6.webp" alt="GTA 5 vs GTA 6 Online" class="hero-widget-bg" loading="lazy" width="800" height="447">
+          <div class="hero-widget-content">
+            <span class="hero-widget-badge">Latest</span>
+            <div class="hero-widget-bottom">
+              <span class="hero-widget-label">Latest Article</span>
+              <span class="hero-widget-title">GTA 5 vs GTA 6 Online — What Actually Changes</span>
+              <span class="hero-widget-cta">Read now</span>
+            </div>
           </div>
         </a>
 
