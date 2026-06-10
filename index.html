@@ -13,10 +13,11 @@
 <meta property="og:title" content="How to Make Money in GTA 6 Online — Best Money Methods & Guides">
 <meta property="og:description" content="Every GTA 6 money method ranked and filtered for your playstyle. Find the fastest way to make money in GTA 6 Online from day one.">
 <meta property="og:image" content="https://gta6moneyhub.com/img3.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="670">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1072">
 <meta property="og:site_name" content="GTA6 Money Hub">
 <meta property="og:locale" content="en_US">
+<meta name="author" content="Rick Vanilla">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://gta6moneyhub.com/">
@@ -37,6 +38,28 @@
 <link rel="preload" href="/fonts/bebas-neue-v16-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/dm-sans-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="/img3.webp" fetchpriority="high">
+<link rel="preload" as="image" href="/img-economy.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "GTA 6 Online Money Methods",
+  "description": "Every way to make money in GTA 6 Online, ranked by payout and filtered by level, budget and playstyle.",
+  "url": "https://gta6moneyhub.com",
+  "numberOfItems": 8,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Contact Missions" },
+    { "@type": "ListItem", "position": 2, "name": "Daily Objectives" },
+    { "@type": "ListItem", "position": 3, "name": "Heists" },
+    { "@type": "ListItem", "position": 4, "name": "Businesses & Passive Income" },
+    { "@type": "ListItem", "position": 5, "name": "Cayo Perico Equivalent" },
+    { "@type": "ListItem", "position": 6, "name": "Auto Shop / Service Business" },
+    { "@type": "ListItem", "position": 7, "name": "Arms Trafficking" },
+    { "@type": "ListItem", "position": 8, "name": "Import / Export" }
+  ]
+}
+</script>
 
 <style>
   @font-face { font-family: 'Bebas Neue'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/bebas-neue-v16-latin-regular.woff2') format('woff2'); }
@@ -52,8 +75,7 @@
   "@type": "WebSite",
   "name": "GTA6MoneyHub",
   "url": "https://gta6moneyhub.com",
-  "description": "How to make money in GTA 6 Online — every money method ranked and filtered by level, budget and playstyle.",
-  "potentialAction": { "@type": "SearchAction", "target": "https://gta6moneyhub.com/?q={search_term_string}", "query-input": "required name=search_term_string" }
+  "description": "How to make money in GTA 6 Online — every money method ranked and filtered by level, budget and playstyle."
 }
 </script>
 <script type="application/ld+json">
@@ -66,13 +88,6 @@
   "url": "https://gta6moneyhub.com",
   "description": "Interactive tool to find the best ways to make money in GTA 6 Online. Filter GTA 6 money methods by level, playstyle, budget and time available.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "ratingCount": "247",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "about": { "@type": "VideoGame", "name": "Grand Theft Auto VI", "gamePlatform": ["PlayStation 5", "Xbox Series X"] }
 }
 </script>
@@ -165,8 +180,6 @@
   .nav-link { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(242,242,242,0.65); text-decoration: none; transition: color .2s; }
   .nav-link:hover { color: var(--accent); }
   .nav-spacer { flex: 1; }
-  .nav-cd { display: none; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
-  .nav-cd strong { font-family: 'Bebas Neue', sans-serif; font-size: .95rem; color: var(--text); letter-spacing: .04em; }
 
   /* HERO */
   .hero {
@@ -402,90 +415,6 @@
 
   .hero-btn-desc { display: none; }
 
-  /* WIDGET LATEST ARTICLE */
-  .hero-widget {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(77,216,224,0.2);
-    border-radius: 12px;
-    text-decoration: none;
-    min-height: 100px;
-    transition: border-color .25s, transform .15s;
-  }
-
-  .hero-widget:hover {
-    border-color: rgba(77,216,224,0.5);
-    transform: translateY(-2px);
-  }
-
-  .hero-widget-bg {
-    position: absolute; inset: 0;
-    object-fit: cover; width: 100%; height: 100%;
-    opacity: .45;
-    transition: opacity .35s;
-  }
-
-  .hero-widget:hover .hero-widget-bg { opacity: .6; }
-
-  .hero-widget::after {
-    content: ''; position: absolute; inset: 0;
-    background:
-      linear-gradient(to top, rgba(8,8,9,1) 0%, rgba(8,8,9,0.8) 40%, rgba(8,8,9,0.25) 100%),
-      linear-gradient(to right, rgba(8,8,9,0.4) 0%, transparent 60%);
-  }
-
-  .hero-widget-content {
-    position: relative; z-index: 1;
-    padding: 1rem 1.1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    min-height: 100px;
-  }
-
-  .hero-widget-badge {
-    font-size: .55rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--bg); background: var(--accent);
-    padding: .18rem .55rem; border-radius: 3px;
-    width: fit-content;
-  }
-
-  .hero-widget-bottom {
-    display: flex;
-    flex-direction: column;
-    gap: .3rem;
-  }
-
-  .hero-widget-label {
-    font-size: .58rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-    color: rgba(242,242,242,0.45);
-  }
-
-  .hero-widget-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(.95rem, 1.8vw, 1.2rem);
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    color: var(--text);
-    line-height: 1.15;
-  }
-
-  .hero-widget-cta {
-    font-size: .63rem; font-weight: 700;
-    color: var(--accent);
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    display: flex; align-items: center; gap: .3rem;
-  }
-
-  .hero-widget-cta::after {
-    content: '→';
-    transition: transform .2s;
-  }
-
-  .hero-widget:hover .hero-widget-cta::after { transform: translateX(3px); }
-
   .email-input {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(77,216,224,0.2);
@@ -675,13 +604,9 @@
     .hero-cards-row {
       grid-template-columns: 1fr 1fr;
     }
-    .hero-widget {
-      grid-column: 1 / -1;
-    }
   }
 
   @media (min-width: 640px) {
-    .hero-email-row { flex-direction: row; }
     .methods-grid { grid-template-columns: repeat(2, 1fr); }
     .widgets-grid { grid-template-columns: repeat(3, 1fr); }
     .trust-grid { grid-template-columns: repeat(3, 1fr); }
@@ -690,10 +615,7 @@
 
   @media (min-width: 768px) {
     nav { padding: .875rem 2rem; }
-    .nav-cd { display: flex; align-items: center; gap: .4rem; }
     .hero-content { padding: 0 2rem 3.5rem; }
-    .hero-bottom { flex-direction: row; }
-    .quick-nav { grid-template-columns: 1fr; min-width: 180px; flex-shrink: 0; }
     .main-grid { padding: 3rem 2rem; }
     .widgets-section { padding: .5rem 2rem 4rem; }
     .trust-section { padding: 2rem 2rem 5rem; }
@@ -723,7 +645,7 @@
 </head>
 <body>
 
-<nav>
+<nav aria-label="Main navigation">
   <a href="/" class="logo">GTA6<span>MoneyHub</span></a>
   <a href="/faq" class="nav-link">FAQ</a>
   <a href="/blog" class="nav-link">Blog</a>
@@ -731,9 +653,10 @@
   <div class="nav-spacer"></div>
 </nav>
 
+<main>
 <section class="hero">
   <div class="hero-bg">
-    <img src="/img3.webp" alt="GTA 6 money guide — aerial view of Vice City" loading="eager" fetchpriority="high" width="1920" height="1080">
+    <img src="/img3.webp" alt="GTA 6 money guide — aerial view of Vice City at night" loading="eager" fetchpriority="high" width="1920" height="1080">
   </div>
 
   <div class="hero-content">
@@ -834,7 +757,7 @@
       <span class="section-note">GTA 5 data — updated at GTA 6 launch</span>
     </div>
 
-    <div class="methods-grid" id="methods-grid">
+    <div class="methods-grid" id="methods-grid" role="list" aria-label="GTA 6 money methods">
 
       <div class="method-card" style="--card-accent:#3dd68c" data-level="beginner" data-solo="solo" data-budget="broke" data-time="quick">
         <div class="card-bar"><div class="card-bar-fill" style="width:22%"></div></div>
@@ -1064,6 +987,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <p>GTA6MoneyHub is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.<br>
