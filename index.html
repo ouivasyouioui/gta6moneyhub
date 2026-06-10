@@ -239,12 +239,26 @@
     margin-top: 2.5rem;
   }
 
-  .filter-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .875rem; flex-wrap: wrap; gap: .5rem; }
-  .filter-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); flex: 1; text-align: center; }
-  .filter-results { font-size: .7rem; color: rgba(242,242,242,0.4); flex-shrink: 0; }
+  .filter-header { display: flex; flex-direction: column; align-items: center; margin-bottom: .875rem; gap: .2rem; }
+  .filter-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); text-align: center; }
+  .filter-results { font-size: .7rem; color: rgba(242,242,242,0.4); text-align: center; }
   .filter-results strong { color: rgba(242,242,242,0.7); }
 
-  .filters { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .load-more-wrap { text-align: center; margin-top: 1rem; }
+  .load-more-btn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .1em;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid rgba(77,216,224,0.3);
+    border-radius: 8px;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+  }
+  .load-more-btn:hover { border-color: rgba(77,216,224,0.6); background: rgba(77,216,224,0.06); }
+  .load-more-btn.hidden { display: none; }
   .filter-group { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
   .filter-group label { font-size: .6rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); opacity: .7; }
   .filter-group select {
@@ -733,7 +747,7 @@
 
     <div class="filter-box">
       <div class="filter-header">
-        <span class="filter-title">What's your situation?</span>
+        <span class="filter-title">Find your best money method</span>
         <span class="filter-results"><strong id="count">8</strong> methods match</span>
       </div>
       <div class="filters">
@@ -940,6 +954,9 @@
       <div style="font-size:1.8rem;margin-bottom:.5rem">🎮</div>
       <p>No methods match your filters. Try adjusting your criteria.</p>
     </div>
+    <div class="load-more-wrap">
+      <button class="load-more-btn" id="load-more-btn" onclick="loadMore()">See more methods ↓</button>
+    </div>
   </div>
 
   <!-- EMAIL COL -->
@@ -1052,25 +1069,42 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-function filterMethods() {
-  const level  = document.getElementById('f-level').value;
-  const solo   = document.getElementById('f-solo').value;
-  const budget = document.getElementById('f-budget').value;
-  const time   = document.getElementById('f-time').value;
-  const cards  = document.querySelectorAll('.method-card');
-  let visible  = 0;
-  cards.forEach(card => {
-    const match =
-      (level  === 'all' || card.dataset.level  === level)  &&
-      (solo   === 'all' || card.dataset.solo   === solo)   &&
-      (budget === 'all' || card.dataset.budget === budget) &&
-      (time   === 'all' || card.dataset.time   === time);
-    card.classList.toggle('hidden', !match);
-    if (match) visible++;
-  });
-  document.getElementById('count').textContent = visible;
-  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
-}
+  const INITIAL_SHOW = 4;
+
+  function filterMethods() {
+    const level  = document.getElementById('f-level').value;
+    const solo   = document.getElementById('f-solo').value;
+    const budget = document.getElementById('f-budget').value;
+    const time   = document.getElementById('f-time').value;
+    const cards  = document.querySelectorAll('.method-card');
+    let matched  = [];
+    cards.forEach(card => {
+      const match =
+        (level  === 'all' || card.dataset.level  === level)  &&
+        (solo   === 'all' || card.dataset.solo   === solo)   &&
+        (budget === 'all' || card.dataset.budget === budget) &&
+        (time   === 'all' || card.dataset.time   === time);
+      card.classList.add('hidden');
+      if (match) matched.push(card);
+    });
+    matched.forEach((card, i) => {
+      if (i < INITIAL_SHOW) card.classList.remove('hidden');
+    });
+    document.getElementById('count').textContent = matched.length;
+    document.getElementById('no-results').style.display = matched.length === 0 ? 'block' : 'none';
+    const btn = document.getElementById('load-more-btn');
+    btn.classList.toggle('hidden', matched.length <= INITIAL_SHOW);
+    btn._matched = matched;
+  }
+
+  function loadMore() {
+    const btn = document.getElementById('load-more-btn');
+    const matched = btn._matched || [];
+    matched.forEach(card => card.classList.remove('hidden'));
+    btn.classList.add('hidden');
+  }
+
+  filterMethods();
 
 async function submitEmail() {
   const email = document.getElementById('email-input').value.trim();
