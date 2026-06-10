@@ -487,21 +487,39 @@
   .hero-widget:hover .hero-widget-cta::after { transform: translateX(3px); }
 
   .email-input {
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 8px; color: var(--text);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(77,216,224,0.2);
+    border-radius: 8px 0 0 8px;
+    color: var(--text);
     font-family: 'DM Sans', sans-serif; font-size: .85rem;
-    padding: .7rem 1rem; width: 100%; transition: border-color .2s; flex: 1;
+    padding: .75rem 1rem; width: 100%; transition: border-color .2s; flex: 1;
+    border-right: none;
   }
-  .email-input::placeholder { color: var(--muted); }
-  .email-input:focus { outline: none; border-color: var(--accent-border); }
+  .email-input::placeholder { color: rgba(242,242,242,0.3); }
+  .email-input:focus { outline: none; border-color: rgba(77,216,224,0.5); }
+
+  .email-row {
+    display: flex;
+    align-items: stretch;
+  }
 
   .email-btn {
-    background: var(--accent); border: none; border-radius: 8px;
-    color: #080809; cursor: pointer;
+    background: var(--bg3);
+    border: 1px solid rgba(77,216,224,0.4);
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    color: var(--accent);
+    cursor: pointer;
     font-family: 'Bebas Neue', sans-serif; font-size: .95rem; letter-spacing: .1em;
-    padding: .7rem 1.1rem; transition: opacity .2s, transform .1s; white-space: nowrap;
+    padding: .75rem 1.25rem;
+    transition: background .2s, border-color .2s;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .email-btn:hover { opacity: .9; transform: translateY(-1px); }
+  .email-btn:hover {
+    background: rgba(77,216,224,0.1);
+    border-color: rgba(77,216,224,0.7);
+  }
 
   .email-feedback { font-size: .75rem; min-height: 1em; }
   .email-feedback.success { color: var(--green); }
@@ -580,23 +598,24 @@
     top: 80px;
   }
 
-  .email-eyebrow { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); opacity: .8; }
+  .email-eyebrow { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); opacity: .8; text-align: center; }
 
   .email-headline {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     letter-spacing: .04em;
     text-transform: uppercase;
-    line-height: 1.05;
+    line-height: 1.1;
     color: var(--text);
+    text-align: center;
   }
-  .email-headline em { font-style: normal; color: var(--accent); display: block; }
+  .email-headline em { font-style: normal; color: var(--accent); display: block; font-size: clamp(1.3rem, 2.2vw, 1.7rem); }
   .email-sub { font-size: .82rem; color: rgba(242,242,242,0.55); line-height: 1.65; }
   .email-proof { font-size: .75rem; color: rgba(242,242,242,0.65); }
   .email-proof strong { color: var(--accent); }
-  .email-perks { display: flex; flex-direction: column; gap: .35rem; border-top: 1px solid var(--border); padding-top: .875rem; }
-  .email-perk { display: flex; align-items: flex-start; gap: .5rem; font-size: .75rem; color: rgba(242,242,242,0.5); }
-  .perk-check { color: var(--green); font-size: .68rem; flex-shrink: 0; margin-top: .15rem; }
+  .email-perks { display: flex; flex-direction: column; gap: .4rem; border-top: 1px solid rgba(77,216,224,0.12); padding-top: .875rem; }
+  .email-perk { display: flex; align-items: flex-start; gap: .5rem; font-size: .78rem; color: rgba(242,242,242,0.65); line-height: 1.4; }
+  .perk-check { color: var(--accent); font-size: .72rem; flex-shrink: 0; margin-top: .15rem; font-weight: 700; }
 
   /* WIDGETS */
   .widgets-section { padding: .5rem 1.25rem 3rem; max-width: 1200px; margin: 0 auto; }
@@ -962,16 +981,17 @@
   <!-- EMAIL COL -->
   <div class="email-col">
     <div class="email-eyebrow">Free — No credit card</div>
-    <h2 class="email-headline">Get the GTA 6 Money Machine Guide.<em>Before everyone else.</em></h2>
-    <p class="email-sub">Every method ranked with real payout data on launch day. Before the meta is figured out.</p>
-    <p class="email-proof">Join <strong>247 players</strong> already signed up</p>
-    <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
-    <button onclick="submitEmail()" class="email-btn" id="email-btn">SEND ME THE GUIDE</button>
+    <h2 class="email-headline">Most players will waste their first month in GTA 6 Online.<em>Don't be one of them.</em></h2>
+    <p class="email-sub">The wrong business on day one = weeks of lost grind. Get the guide before you log in — every method ranked, every costly mistake listed.</p>
+    <div class="email-row">
+      <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
+      <button onclick="submitEmail()" class="email-btn" id="email-btn">Send me the guide</button>
+    </div>
     <div class="email-feedback" id="email-feedback"></div>
     <div class="email-perks">
-      <div class="email-perk"><span class="perk-check">✓</span> Every method ranked from day one</div>
-      <div class="email-perk"><span class="perk-check">✓</span> Updated after every Rockstar patch</div>
-      <div class="email-perk"><span class="perk-check">✓</span> 100% free. No payment needed.</div>
+      <div class="email-perk"><span class="perk-check">✓</span> Every money method ranked for day one</div>
+      <div class="email-perk"><span class="perk-check">✓</span> The purchases everyone regrets — avoid them</div>
+      <div class="email-perk"><span class="perk-check">✓</span> Updated after every Rockstar patch. Always free.</div>
     </div>
   </div>
 
