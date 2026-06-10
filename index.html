@@ -609,12 +609,13 @@
     color: var(--text);
     text-align: center;
   }
-  .email-headline em { font-style: normal; color: var(--accent); display: block; font-size: clamp(1.3rem, 2.2vw, 1.7rem); }
+  .email-headline em { font-style: normal; color: var(--accent); display: block; font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin-top: .6rem; }
   .email-sub { font-size: .9rem; color: var(--accent); line-height: 1.65; text-align: center; font-style: italic; }
   .email-proof { font-size: .75rem; color: rgba(242,242,242,0.65); }
   .email-proof strong { color: var(--accent); }
   .email-perks { display: flex; flex-direction: column; gap: .5rem; border-top: 1px solid rgba(77,216,224,0.12); padding-top: .875rem; align-items: center; }
-  .email-perk { display: flex; align-items: flex-start; gap: .6rem; font-size: .85rem; color: rgba(242,242,242,0.8); line-height: 1.4; }
+  .email-perk { display: flex; align-items: center; gap: .6rem; font-size: .85rem; color: rgba(242,242,242,0.8); line-height: 1.4; width: 100%; max-width: 290px; }
+  .email-perk img { flex-shrink: 0; width: 18px; height: 18px; }
   .perk-check { color: var(--accent); font-size: .85rem; flex-shrink: 0; margin-top: .1rem; font-weight: 700; }
 
   /* WIDGETS */
@@ -980,12 +981,11 @@
 
   <!-- EMAIL COL -->
   <div class="email-col">
-    <div class="email-eyebrow">Free. No credit card or payment required.</div>
     <h2 class="email-headline">Most players will waste their first month in GTA 6 Online.<em>Don't be one of them.</em></h2>
-    <p class="email-sub">The wrong business, the wrong investments = weeks lost. Get the <strong>free guide</strong> before you log in.</p>
+    <p class="email-sub">Start GTA 6 Online like you've already played it. Get your <strong>free guide</strong>.</p>
     <div class="email-row">
       <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
-      <button onclick="submitEmail()" class="email-btn" id="email-btn">Send me the guide</button>
+      <button onclick="submitEmail()" class="email-btn" id="email-btn">I WANT IT</button>
     </div>
     <div class="email-feedback" id="email-feedback"></div>
     <div class="email-perks">
@@ -1156,7 +1156,7 @@ async function submitEmail() {
     feedback.textContent = 'Something went wrong. Try again.';
     feedback.className = 'email-feedback error';
   }
-  btn.disabled = false; btn.textContent = 'SEND ME THE GUIDE';
+  btn.disabled = false; btn.textContent = 'I WANT IT';
 }
 
 if (localStorage.getItem('cookies-accepted')) document.getElementById('cookie-banner').style.display = 'none';
