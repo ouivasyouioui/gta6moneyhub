@@ -609,8 +609,11 @@
     color: var(--text);
     text-align: center;
   }
-  .email-headline em { font-style: normal; color: var(--accent); display: block; font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin-top: .6rem; }
-  .email-sub { font-size: .9rem; color: var(--accent); line-height: 1.65; text-align: center; font-style: italic; }
+  .email-headline em { font-style: normal; color: var(--accent); font-size: clamp(1.1rem, 2vw, 1.5rem); }
+  .email-sub { font-size: 1rem; color: var(--accent); line-height: 1.5; text-align: center; font-style: italic; margin-top: .35rem; }
+  .email-perks { display: flex; flex-direction: column; gap: .5rem; border-top: 1px solid rgba(77,216,224,0.12); padding-top: .875rem; align-items: center; }
+  .email-perk { display: flex; align-items: center; gap: .6rem; font-size: .72rem; color: #ffffff; line-height: 1.2; width: 100%; max-width: 290px; white-space: nowrap; }
+  .email-perk img { flex-shrink: 0; width: 18px; height: 18px; }
   .email-proof { font-size: .75rem; color: rgba(242,242,242,0.65); }
   .email-proof strong { color: var(--accent); }
   .email-perks { display: flex; flex-direction: column; gap: .5rem; border-top: 1px solid rgba(77,216,224,0.12); padding-top: .875rem; align-items: center; }
@@ -981,7 +984,7 @@
 
   <!-- EMAIL COL -->
   <div class="email-col">
-    <h2 class="email-headline">Most players will waste their first month in GTA 6 Online.<em>Don't be one of them.</em></h2>
+    <h2 class="email-headline">Most players will waste their first month in GTA 6 Online. <em>Don't be one of them.</em></h2>
     <p class="email-sub">Start GTA 6 Online like you've already played it. Get your <strong>free guide</strong>.</p>
     <div class="email-row">
       <input type="email" id="email-input" placeholder="your@email.com" class="email-input" autocomplete="email">
