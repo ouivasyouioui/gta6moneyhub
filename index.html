@@ -1239,14 +1239,9 @@ async function submitEmail() {
   }
   btn.disabled = true; btn.textContent = '...'; feedback.textContent = '';
   try {
-    const res = await fetch('https://rztkphzlkftsfjkybpky.supabase.co/rest/v1/emails', {
+    const res = await fetch('https://email-capture.pierrickmalijai.workers.dev', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6dGtwaHpsa2Z0c2Zqa3licGt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzODIzNjgsImV4cCI6MjA5NTk1ODM2OH0.6MBZTxHagWLYmv9QkfP92euP4yaaefmCtSXxFmx7mBE',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6dGtwaHpsa2Z0c2Zqa3licGt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzODIzNjgsImV4cCI6MjA5NTk1ODM2OH0.6MBZTxHagWLYmv9QkfP92euP4yaaefmCtSXxFmx7mBE',
-        'Prefer': 'return=minimal'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email })
     });
     if (res.ok || res.status === 201) {
