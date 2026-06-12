@@ -83,12 +83,19 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "GTA 6 Money Method Filter",
-  "applicationCategory": "GameApplication",
+  "applicationCategory": "Game",
   "operatingSystem": "Web",
   "url": "https://gta6moneyhub.com",
   "description": "Interactive tool to find the best ways to make money in GTA 6 Online. Filter GTA 6 money methods by level, playstyle, budget and time available.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "about": { "@type": "VideoGame", "name": "Grand Theft Auto VI", "gamePlatform": ["PlayStation 5", "Xbox Series X"] }
+  "about": {
+    "@type": "VideoGame",
+    "name": "Grand Theft Auto VI",
+    "gamePlatform": ["PlayStation 5", "Xbox Series X", "Xbox Series S"],
+    "applicationCategory": "Game",
+    "operatingSystem": "PlayStation 5, Xbox Series X, Xbox Series S",
+    "publisher": { "@type": "Organization", "name": "Rockstar Games" }
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -633,6 +640,61 @@
   .widget:hover .widget-arrow { opacity: 1; transform: translateX(3px); }
 
   /* TRUST */
+  .faq-preview-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .faq-preview-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .faq-preview-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .faq-preview-link {
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: .04em;
+  }
+  .faq-preview-list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .faq-preview-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: border-color .2s;
+    gap: 1rem;
+  }
+  .faq-preview-item:hover { border-color: rgba(77,216,224,0.3); }
+  .faq-preview-q {
+    font-size: .875rem;
+    color: rgba(242,242,242,0.8);
+    line-height: 1.4;
+  }
+  .faq-preview-arrow {
+    color: var(--accent);
+    font-size: .85rem;
+    flex-shrink: 0;
+  }
+
   .trust-section { padding: 2rem 1.25rem 4rem; max-width: 900px; margin: 0 auto; border-top: 1px solid var(--border); }
   .trust-label { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: center; margin-bottom: 1.5rem; }
   .trust-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
@@ -1034,6 +1096,31 @@
         <div class="widget-desc">What actually changes for making money</div>
       </div>
       <span class="widget-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<section class="faq-preview-section" aria-label="Popular GTA 6 money questions">
+  <div class="faq-preview-header">
+    <h2 class="faq-preview-title">Popular Questions</h2>
+    <a href="/faq" class="faq-preview-link">All questions →</a>
+  </div>
+  <div class="faq-preview-list">
+    <a href="/faq#how-make-money-fast" class="faq-preview-item">
+      <span class="faq-preview-q">How do you make money fast in GTA 6 Online?</span>
+      <span class="faq-preview-arrow">→</span>
+    </a>
+    <a href="/faq#best-passive-income" class="faq-preview-item">
+      <span class="faq-preview-q">What are the best passive income businesses in GTA 6?</span>
+      <span class="faq-preview-arrow">→</span>
+    </a>
+    <a href="/faq#money-per-hour" class="faq-preview-item">
+      <span class="faq-preview-q">How much money can you make per hour in GTA 6 Online?</span>
+      <span class="faq-preview-arrow">→</span>
+    </a>
+    <a href="/faq#beginner-money" class="faq-preview-item">
+      <span class="faq-preview-q">How do you make money fast in GTA 6 as a beginner?</span>
+      <span class="faq-preview-arrow">→</span>
     </a>
   </div>
 </section>
